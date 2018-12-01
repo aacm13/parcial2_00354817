@@ -1,8 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Niconne");
 body {
+  width: 90%;
+  margin: auto;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+}
+header{
+  background-color: #ffe7c2;
+}
+header h1{
+  font-family: 'Niconne', cursive;
+  margin: 0;
+}
+#new{
+  background-color: #e3e8ed;
+  display: flex;
+  padding: 1em;
+  justify-content: space-around;
+}
+.group{
+  display: flex;
+  flex-direction: row-reverse;
+  
+}
+.group input{
+  border-radius: 0.3em;
+  padding: 0.3em;
+}
+.group label{
+  display: none;
+}
+
+.table thead{
+  display: flex;
+  justify-content: space-between;
 }
