@@ -15,12 +15,25 @@ header{
 header h1{
   font-family: 'Niconne', cursive;
   margin: 0;
+  color: rgb(59, 59, 59);
+  padding: 1em 0em;
 }
 #new{
   background-color: #e3e8ed;
   display: flex;
   padding: 1em;
   justify-content: space-around;
+}
+#new button{
+  background-color: rgb(17, 148, 17);
+  border: none;
+  border-radius: 0.3em;
+  color: white;
+  
+}
+#new button:hover{
+  background-color: rgb(11, 109, 11);
+  transition-duration: 0.4s;
 }
 .group{
   display: flex;
@@ -30,12 +43,41 @@ header h1{
 .group input{
   border-radius: 0.3em;
   padding: 0.3em;
+  border: none;
 }
 .group label{
   display: none;
 }
 
-.table thead{
-  display: flex;
-  justify-content: space-between;
+.table table{
+  width: 100%;
+  border: solid rgb(196, 196, 196) 1px;
+
+
+  
+}
+table thead{
+  justify-content: space-evenly;
+  background-color: rgb(27, 78, 136);
+  color: white;
+  
+}
+th{
+  text-align: left;
+  padding: 1em 0.5em;
+}
+td{
+  padding: 0;
+  margin: 0;
+}
+.edit i,.delete i{
+  color: rgb(44, 88, 168);
+  font-size: 1.2em;
+  padding: 0 1em;
+}
+.edit i:hover,.delete i:hover{
+  color: rgb(33, 65, 122);
+}
+.set:hover{
+  background-color: rgb(221, 221, 221);
 }

@@ -11,7 +11,7 @@ addEvents: function () {
 
                 series.innerHTML = data.reduce((cadena, element) => {
                     return cadena +
-                        ` <tr>
+                        ` <tr class="set">
                             <td class="id">${element.id}</td>
                             <td class="name">${element.nombre}</td>
                             <td class="genero">${element.genero}</td>

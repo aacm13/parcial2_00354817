@@ -76,6 +76,10 @@ router.post('/:id', function(req, res){
             res.send({err});
         }
         res.send({message:"saved", success:true});
+        res.status(200);
+        res.json({
+            status:200
+        })
     });
 });
 
@@ -92,6 +96,10 @@ router.post('/:id', function(req, res){
                 res.send({err});
             }
             res.send({message: "update" , success:true});
+            res.status(200);
+            res.json({
+                status:200
+            })
     });
 });
 
