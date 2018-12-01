@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  .container
+    header
+      h1 Administrador de Series de televisión 
+    form#new(action="" method= "post" name="saveSerie")
+      .group  
+          input#id(type="number", name="id" required)
+          span.highlight
+          span.bar
+          labal(for="id") ID
+      .group  
+          input#id(type="text", name="name" required)
+          span.highlight
+          span.bar
+          labal(for="name") Nombre
+      .group  
+          input#id(type="text", name="genero" required)
+          span.highlight
+          span.bar
+          labal(for="genero") Genero
+      .group  
+          input#id(type="number", name="capitulos" required)
+          span.highlight
+          span.bar
+          labal(for="capitulos") Capitulos
+    .table
+      table
+        thead
+          th ID
+          th Nombre
+          th Genero
+          th Capitulos
+        tbody.series
+  script(src="/javascript/main.js-")
