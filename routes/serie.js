@@ -16,10 +16,10 @@ router.get('/', function (req, res){
     });
 });
 
-router.get('/:name',function(req, res){
-    if(req.params.name){
+router.get('/:id',function(req, res){
+    if(req.params.id){
         serieModel.findOne({
-            nombre:req.params.name
+            id:req.params.id
         }, function (err, serie){
             if(err){
                 res.status(500);
@@ -39,10 +39,10 @@ router.get('/:name',function(req, res){
         })
     }
 });
-router.get('/delete/:name', function(req, res){
-    if(req.params.name){
+router.get('/delete/:id', function(req, res){
+    if(req.params.id){
         serieModel.deleteOne({
-            nombre:req.params.name
+            id:req.params.id
         }, function (err, serie){
             if(err){
                 res.status(500);
@@ -63,7 +63,7 @@ router.get('/delete/:name', function(req, res){
     }
 });
 
-router.post('/:name', function(req, res){
+router.post('/:id', function(req, res){
     let Serie = new serieModel({
         id: req.body.id,
         nombre: req.body.name,
