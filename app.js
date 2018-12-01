@@ -3,9 +3,26 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
+//modelos
+var serie = require('./models/Serie');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var serieRouter = require('./routes/serie');
+
+//connect to mongo
+var user = process.env.USERDB || "";
+var password = process.env.PASSDB || "";
+var server = process.env.SERVER || "localhost";
+var db = process.env.DATABASE || "parcial";
+var string = `mongodb://${user}:${password}@${server}/${db}`;
+mongoose.Promise = global.Promise;
+mongoose.connect(string, {
+  useNewUrlParser:true
+})
+.then(() => console.log('connection successful'))
+.catch(() => console.error('connection faild'));
 
 var app = express();
 
@@ -18,6 +35,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('serie', serieRouter);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
